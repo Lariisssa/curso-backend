@@ -40,5 +40,14 @@ server.listen(3000, () => {
 });
 ~~~~
 
+Para preparar seu projeto, rode no terminal:
+~~~~shell
+npm install
+~~~~
+
 Para iniciar o servidor, utilize
+~~~~shell
 npm start
+~~~~
+
+Para 
