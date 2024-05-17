@@ -1,24 +1,29 @@
-import express from 'express'; // importa o servidor express para utilizarmos
-import fs from 'fs';  // importa o módulo fs para manipular arquivos
+import express from 'express';
+import { gemini_response } from './gemini.js';
 
-const server = express(); // cria uma instância do servidor express
-server.use(express.json()); // habilita o uso de JSON no servidor
+const server = express();
+server.use(express.json());
 
-server.get('/', (req, res) => { // cria uma rota GET para a raiz do servidor
-  res.send('Hello World'); // retorna a mensagem 'Hello World' para quem acessar a rota
-}); // fecha a função de callback. Uma função de callback é uma função que é passada como argumento para outra função.
+server.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
-server.get('/create_txt_file', (req, res) => { // cria uma rota GET para a rota /create_txt_file
-  const file_content = fs.readFileSync('message.txt', 'utf8');  // lê o conteúdo do arquivo message.txt
-  fs.writeFile('message.txt', file_content + ' peidei', (err) => { // escreve no arquivo message.txt o conteúdo lido mais a string ' peidei'
-    if (err) throw err; // se houver erro, lança uma exceção. Uma excessao é um erro que ocorre durante a execução de um programa. Lançar uma exceção interrompe a execução do programa.
+server.get('/get_llm_response/:prompt', (req, res) => {
+  // lembre-se de rodar o npm install
+  // lembre-se de rodar o npm start
+  const promptText = req.params.prompt;
+  const fullPrompt = "RESPONSE IN HTML FORMAT: " + promptText; // altere aqui e na url para o que deseja que o modelo responda, seja criativo, mais do que eu fui aqui
 
-    console.log('The file has been saved!'); // imprime no console a mensagem 'The file has been saved!'
-  }); // fecha a função de callback. Uma função de callback é uma função que é passada como argumento para outra função.
-  res.send('File created'); // retorna a mensagem 'File created' para quem acessar a rota
-}); // fecha a função de callback. Uma função de callback é uma função que é passada como argumento para outra função.
+  //exemplo: http://localhost:3000/get_llm_response/crie_um_joguinho_bem_simples_com_html_css_e_js_tem_que_funcionar_viu_?
+  
+  gemini_response(fullPrompt).then(response => {
+    res.send(response);
+    console.log(response);
+  }).catch(error => {
+    res.status(500).send('There was an error!');
+  });
+});
 
-// copilot, me explique o que o codigo abaixo faz: 
-server.listen(3000, () => { // inicia o servidor express na porta 3000
-  console.log('Server is running on http://localhost:3000');  // imprime no console a mensagem 'Server is running on http://localhost:3000'
-}); // fecha a função de callback. Uma função de callback é uma função que é passada como argumento para outra função.
+server.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
