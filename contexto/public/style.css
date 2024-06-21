@@ -1,0 +1,113 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: justify;
+}
+
+body {
+    background-color: rgb(21, 32, 43);
+    color: #fff;
+    width: 31%;
+    margin: 0 auto;
+}
+  
+#header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+  
+h1{
+    font-size: 20px;
+    margin-left: 35%;
+    margin-bottom: 15px;
+}
+  
+svg{
+    width: 18px;
+    height: auto;
+}  
+
+
+.hide{
+    display: none;
+}
+
+.show {
+    display: block;    
+}
+    
+input{
+    background-color: rgb(38, 51, 64);
+    padding: 15px;
+    width: 92%;
+    border-color: #fff;
+    border-radius: 3px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+  
+#regras{
+    background-color: rgb(30, 39, 50);
+    margin-bottom: 15px;
+    padding: 12px;
+}
+  
+h4{
+    font-size: large;
+}
+  
+h4, p{
+    margin-bottom: 15px;
+}
+  
+.faq{
+    font-size: 14px;
+    font-weight: 100;
+}
+
+#listaPalavras{
+    background-color: rgb(30, 39, 50);
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.container_palavra_tentada_75{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    background-color: #00000020;
+    padding: 12px;
+    color: #02d866;
+}
+
+.container_palavra_tentada_50{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    background-color: #00000020;
+    padding: 12px;
+    color: #d88d02;
+}
+
+.container_palavra_tentada_0{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    background-color: #00000020;
+    padding: 12px;
+    color: #e95555;
+}
+
+.palavra_tentada{
+    font-size: 16px;
+    font-weight: bold;
+    text-transform:lowercase;
+    letter-spacing: 3px;
+}
+
+.esconder{
+    display: none;
+}

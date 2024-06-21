@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='stylesheet' href='/style.css'>
+  <title>CONTEXTO</title>
+</head>
+
+<body>
+  <header>
+    <div id='header'>
+      <h1>CONTEXTO</h1>
+      <svg id='menu-icon' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' fill='#ffffff'
+        class='bi bi-three-dots-vertical' stroke='#ffffff'>
+        <g id='SVGRepo_bgCarrier' stroke-width='0'></g>
+        <g id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'></g>
+        <g id='SVGRepo_iconCarrier'>
+          <path
+            d='M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z'>
+          </path>
+        </g>
+      </svg>
+    </div>
+    <nav>
+      <div id='nav-list' class='hide'>
+        <ul>
+          <li class='nav-item'><a href='#'>Como jogar</a></li>
+          <li class='nav-item'><a href='#'>Dica</a></li>
+          <li class='nav-item'><a href='#'>Desistir</a></li>
+          <li class='nav-item'><a href='#'>Jogos anteriores</a></li>
+          <li class='nav-item'><a href='#'>Configurações</a></li>
+          <li class='nav-item'><a href='#'>Créditos</a></li>
+          <li class='nav-item'><a href='#'>Feedback</a></li>
+          <li class='nav-item'><a href='#'>FAQ</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div id="vitoria" class="esconder">
+    <h2>Parabéns! Você acertou a palavra secreta!</h2>
+    <p>Para jogar novamente, clique <a href="/">aqui</a></p>
+  </div>
+  <menu>
+    <p class='pMenu'>TENTATIVAS: <span id="tentativas">0</span></p>
+  </menu>
+  <form id='form'>
+    <div id='caixaPalavra'>
+      <input id="palavra_tentada" name="palavra_tentada" placeholder='digite uma palavra'></input>
+    </div>
+    <input id="botao_tentar" type='submit' value='Enviar'></input>
+  </form>
+  <div id='palavras'>
+    <h4>Palavras tentadas</h4>
+    <div id='listaPalavras'>
+    </div>
+  </div>
+  <div id='regras'>
+    <h4>Como Jogar</h4>
+    <p>Descubra a palavra secreta. Você pode tentar quantas vezes precisar.</p>
+    <p>As palavras foram ordenadas por um algoritmo de inteligência artificial de acordo com a similaridade delas com a
+      palavra secreta.</p>
+    <p>Depois de enviar uma palavra, você verá a posição em que ela está. A palavra secreta é a número 1.</p>
+    <p>O algoritmo analisou milhares de textos em Português. Ele utiliza o contexto em que as palavras são utilizadas
+      para calcular a similaridade entre elas.</p>
+  </div>
+  <div id='faq'>
+    <h4>FAQ</h4>
+    <p>Como a ordem das palavras é definida?</p>
+    <p class='faq'> O jogo utiliza um algoritmo de inteligência artificial e milhares de textos para calcular a
+      similaridade das palavras em relação à palavra do dia. Não necessariamente está relacionado ao significado das
+      palavras, mas sim à proximidade em que elas são utilizadas na internet. Por exemplo, se a palavra do dia for
+      “infinito”, palavras relacionadas a “amor” ou palavras relacionadas a “universo” podem estar próximas à palavra do
+      dia porque “infinito” é comumente utilizada nesses dois contextos diferentes. Em raciocínio semelhante, se “tv” e
+      “televisão”, por exemplo, estão em posições bem distintas, significa que são utilizadas de forma diferente em
+      relação à palavra do dia, apesar de se tratarem do mesmo objeto. </p>
+    <p class='faq'> Clique nos três pontinhos localizados no lado direito superior da tela e selecione a opção “Dica”,
+      que revelará uma palavra. </p>
+  </div>
+  <script src='/script.js'></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+1 - Definir uma palavra a ser descoberta
+1.1 - Podemos fazer isso pedindo uma palavra aleatoria pra LLM 
+1.2 - OU Podemos fazer isso definindo nós mesmos um array com 10 palavras por exemplo, e pegando aleatoriamente uma delas na hora de começar o jogo.
+2 - Pedir a definição vetorial da palavra ao modelo de embedding do google e armazenar em uma variavel
+3 - Assim que a pessoa escrever uma palavra pra tentar acertar nós vamos fazer o seguinte:
+3.1 - Pedir a definição vetorial da palavra que a pessoa tentou acertar ao modelo de embedding do google e armazenar em uma variavel
+3.2 - Comparar a definição da palavra correta com a palavra que a pessoa tentou para ver o grau de similarida. Nesse caso:
+3.2.1 - Se o grau de similaridade for 1, a pessoa acertou a palavra correta. Exibir mensagem de parabens e botão para iniciar novo jogo.
+3.2.2 - Se o grau de similaridade for diferente de 1, exibiremos a palavra na tela com o grau de similaridade que ela atingiu com a palavra original. Precisamos salvar essa resposta em algum lugar, e na hora de exibir, ordenar da mais similar à menos similar.
+4 - A pessoa pode pedir uma dica. Nesse caso faremos o seguinte
+4.1 - Pegamos a palavra original, jogamos em um prompt e pedimos pra LLM dar uma palavra semelhante àquela.
+4.2 - Mostramos a palavra semelhante ao jogador pra ele inserir e ver o grau de similaridade que ela dá.
